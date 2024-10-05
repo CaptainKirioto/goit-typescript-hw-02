@@ -1,0 +1,10 @@
+.error {
+  margin-top: 15px;
+  display: inline-block;
+  padding: 15px;
+
+  border-radius: 8px;
+  font-size: large;
+  color: black;
+  background-color: rgb(238, 157, 44);
+}
