@@ -1,6 +1,10 @@
 import s from "./LoadMoreBtn.module.css";
 
-const LoadMoreBtn = ({ handleLoadMore }) => {
+type LoadMoreBtnProps = {
+  handleLoadMore: () => void;
+};
+
+const LoadMoreBtn = ({ handleLoadMore }: LoadMoreBtnProps) => {
   return (
     <button type="button" className={s.button} onClick={handleLoadMore}>
       Load more images!

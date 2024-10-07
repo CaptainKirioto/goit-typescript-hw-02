@@ -1,11 +1,17 @@
 import s from "./ImageCard.module.css";
+import { Image } from "../App/App.types";
 
-const ImageCard = ({ image, openModal }) => {
+type ImageCardProps = {
+  image: Image;
+  openModal: (image: Image) => void;
+};
+
+const ImageCard = ({ image, openModal }: ImageCardProps) => {
   return (
     <div className={s.wrapper}>
       <img
         src={image.urls.small}
-        alt={image.description}
+        alt={image.description || "Image description"}
         className={s.image}
         onClick={() => openModal(image)}
       />

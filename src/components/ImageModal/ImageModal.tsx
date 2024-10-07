@@ -1,5 +1,6 @@
 import Modal from "react-modal";
 import s from "./ImageModal.module.css";
+import { Image } from "../App/App.types";
 
 Modal.setAppElement("#root");
 
@@ -18,7 +19,13 @@ const customStyles = {
   },
 };
 
-const ImageModal = ({ isOpen, closeModal, image }) => {
+type ImageModalProps = {
+  isOpen: boolean;
+  closeModal: () => void;
+  image: Image | null;
+};
+
+const ImageModal = ({ isOpen, closeModal, image }: ImageModalProps) => {
   return (
     <Modal
       isOpen={isOpen}
