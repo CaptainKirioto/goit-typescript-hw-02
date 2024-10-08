@@ -23,13 +23,18 @@ function App(): JSX.Element {
 
   const isLastPage = totalPages !== null && page >= totalPages;
 
+  type FetchImagesResponse = {
+    total_pages: number;
+    results: Image[];
+  };
+
   useEffect(() => {
     if (!query) return;
     const getData = async () => {
       setLoader(true);
       setError(null);
       try {
-        const data = await fetchImages(query, page);
+        const data: FetchImagesResponse = await fetchImages(query, page);
         if (data.total_pages === 0) {
           toast.error("There is no images like that");
         }
